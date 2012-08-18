@@ -1,4 +1,7 @@
 Nelsonisapple::Application.routes.draw do
+  root :to => "zero#home"
+  get "zero" => "zero#home"
+  get "zero/helloworld" => "zero#hello"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

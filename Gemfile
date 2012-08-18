@@ -1,14 +1,25 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-gem "eventmachine", "1.0.0.beta.4.1", group: [:development]
-gem 'guard-livereload', group: [:development]
-gem 'thin', group: [:development]
+group :development, :test do
+	gem 'sqlite3'
+  gem "rspec-rails", "~> 2.4"
+end
+
+group :development do
+# the belows are for thin
+	gem "eventmachine", "1.0.0.beta.4.1"
+	gem 'guard-livereload'
+	gem 'thin'
+end
+
+# paging plugins
+gem "kaminari"
+
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +33,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+  gem 'thin'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
