@@ -1,4 +1,10 @@
 Nelsonisapple::Application.routes.draw do
+  get "exam_gen/home"
+  get "exam_gen/searchEx"
+  get "exam_gen/addEx"
+  get "exam_gen/makeEx"
+  get "exam_gen/howTo"
+
   root :to => "zero#home"
   get "zero" => "zero#home"
   get "zero/helloworld" => "zero#hello"

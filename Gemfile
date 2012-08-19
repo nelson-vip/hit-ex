@@ -11,6 +11,7 @@ end
 
 group :development do
 # the belows are for thin
+  gem 'spork'
 	#gem "eventmachine", "1.0.0.beta.4.1"
 	gem 'guard-livereload'
 	gem 'thin'
